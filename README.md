@@ -1,1 +1,1 @@
-# titanic
+# Practical Machine Learning
