@@ -36,7 +36,7 @@ def plot_gini_age(df, t0, t1, step, fname):
     y = [gini_by_age(titanic_df, a) for a in ages]
     plt.xlabel('age')
     plt.ylabel('gini')
-    plt.plot(ages, y, c='orange')
+    plt.scatter(ages, y, c='orange')
     plt.savefig(fname)
     min_index, min_value = min(enumerate(y), key=operator.itemgetter(1))
     return ages[min_index], min_value
@@ -51,15 +51,15 @@ def use_tree(df, fname):
 
 
 titanic_df = pd.read_csv("titanic_ds.csv")
-
 #check the gini index of the covariant sex
 sex_cov = titanic_df[['sex', 'survived']]
 print gini(sex_cov, 'sex', ['female', 'male'], 'survived',[0,1])
 # Now check the age
 age_cov = titanic_df[['age', 'survived']].dropna()
-age, min = plot_gini_age(age_cov, 4, 20, 0.1, 'age.eps')
-print "At age %f, the Gini Index is %f" %(ages[min_index], min_value)
-use_tree(age_cov, 'graph.pdf')
+age, min_index = plot_gini_age(age_cov, 4, 20, 0.2, '../../book/gini_age.eps')
+print "At age %f, the Gini Index is %f" %(age, min_index)
+use_tree(age_cov, '../../book/graph.pdf')
+
 
 
 
