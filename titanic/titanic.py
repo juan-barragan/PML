@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # We use the Titanic data set for checking up whether age and sex are good indicators for surviving. 
+# We use the decision tree classifier
 # Kids and women first!?
 
 import pandas as pd

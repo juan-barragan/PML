@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# We compare Nayes Naive against tree classifier for answering the question on whether an adult
+# We compare Naive Bayes against tree classifier for answering the question on whether an adult
 # earns more or less than 50K Dollars a year. There are variables like
 # age,workclass,education,marital,occupation,relationship,race,sex,
 
